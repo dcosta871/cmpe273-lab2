@@ -27,8 +27,10 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 class Calculate(calculator_pb2_grpc.CalculateServicer):
 
     def PerformCalculation(self, request, context):
-        return calculator_pb2.CalculateReply(result=request.num1 + request.num2)
+        return calculator_pb2.CalculateReply(result=add(request.num1, request.num2))
 
+def add(x, y):
+    return x + y
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
