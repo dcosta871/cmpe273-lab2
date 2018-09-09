@@ -21,19 +21,19 @@ option objc_class_prefix = "CLC";
 
 package calculator;
 
-// The greeting service definition.
+// The calculate service definition.
 service Calculate {
   // Sends a calculate request
   rpc PerformCalculation (CalculateRequest) returns (CalculateReply) {}
 }
 
-// The request message containing the user's name.
+// The request message containing two numbers that will be used in calculation
 message CalculateRequest {
   double num1 = 1;
   double num2 = 2;
 }
 
-// The response message containing the greetings
+// The response message containing the calculated result
 message CalculateReply {
   double result = 1;
 }
